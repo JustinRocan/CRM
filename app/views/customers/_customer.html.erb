@@ -1,11 +1,34 @@
-<div>
-  <%= link_to 'edit', edit_customer_path(customer) %> 
-  <%= link_to 'x', customer, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <h2><%= customer.full_name %></h2>
-  <%= image_tag customer.img %>
-  <p><strong>Phone:</strong><%= customer.phone_number %></p>
-  <p><strong>Email:</strong><%= customer.email %></p>
-  <p><strong>Notes:</strong><%= customer.notes %></p>
+<div class="Customer">
+  <span>
+    <%= link_to 'edit', edit_customer_path(customer) %> 
+    <%= link_to 'x', customer, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </span>
+  
+  <% if customer.full_name.present? %>
+    <h2><%= customer.full_name %></h2>
+  <% end %>
+
+  <% if customer.img.present? %>
+    <%= image_tag customer.img %>
+  <% end %>
+
+  <% if customer.province.present? %>  
+    <p><strong>Province: </strong><%= customer.province.name %></p>
+  <% else %>
+    <p><strong>Province: </strong>None</p>
+  <% end %>
+
+  <% if customer.phone_number.present? %>  
+  <p><strong>Phone: </strong><%= customer.phone_number %></p>
+  <% end %>
+
+  <% if customer.email.present? %>  
+  <p><strong>Email: </strong><%= customer.email %></p>
+  <% end %>
+
+  <% if customer.notes.present? %>  
+  <p><strong>Notes: </strong><%= customer.notes %></p>
+  <% end %>
 </div>
 
 
