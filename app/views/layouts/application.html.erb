@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRM</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'All Customer', root_path %>
+     - 
+    <%= link_to 'Alphabetized Customers', alphabetized_path %>
+     - 
+    <%= link_to 'Missing Emails', missing_email_path %>
+     - 
+    <%= link_to 'New Customer', new_customer_path %>
+
+    <%= yield %>
+  </body>
+</html>
